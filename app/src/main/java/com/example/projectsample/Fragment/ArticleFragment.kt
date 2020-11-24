@@ -21,24 +21,13 @@ import kotlinx.android.synthetic.main.fragment_article.*
 
  class ArticleFragment :Fragment(R.layout.fragment_article) {
     lateinit var viewModel: NewsViewModel
-    val args : ArticleFragmentArgs by navArgs()
-     override fun <I : Any?, O : Any?> prepareCall(
-         contract: ActivityResultContract<I, O>,
-         callback: ActivityResultCallback<O>
-     ): ActivityResultLauncher<I> {
-         TODO("Not yet implemented")
-     }
 
-     override fun <I : Any?, O : Any?> prepareCall(
-         contract: ActivityResultContract<I, O>,
-         registry: ActivityResultRegistry,
-         callback: ActivityResultCallback<O>
-     ): ActivityResultLauncher<I> {
-         TODO("Not yet implemented")
-     }
+    val args : ArticleFragmentArgs by navArgs()
+
 
      override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         viewModel = (activity as NewsActivity).viewModel
         val article = args.article
         webView1.apply {
@@ -48,7 +37,7 @@ import kotlinx.android.synthetic.main.fragment_article.*
 
         fab.setOnClickListener {
             viewModel.saveArticle(article)
-            Snackbar.make(view,"Article save Successfully",Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(view,"خبر با موفقیت ذخیره شد",Snackbar.LENGTH_SHORT).show()
         }
     }
 }
