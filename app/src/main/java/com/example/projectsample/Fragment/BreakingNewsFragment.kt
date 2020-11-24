@@ -29,20 +29,7 @@ import retrofit2.Response
     lateinit var viewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
     val TAG ="BreakingNewsFragment"
-     override fun <I : Any?, O : Any?> prepareCall(
-         contract: ActivityResultContract<I, O>,
-         callback: ActivityResultCallback<O>
-     ): ActivityResultLauncher<I> {
-         TODO("Not yet implemented")
-     }
 
-     override fun <I : Any?, O : Any?> prepareCall(
-         contract: ActivityResultContract<I, O>,
-         registry: ActivityResultRegistry,
-         callback: ActivityResultCallback<O>
-     ): ActivityResultLauncher<I> {
-         TODO("Not yet implemented")
-     }
 
      override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

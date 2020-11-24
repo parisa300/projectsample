@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/breakingNewsFragment"
-        android:title="Breaking News"
+        android:title="لیست اخبار"
         android:icon="@drawable/ic_home"/>
 
     <item android:id="@+id/savedNewsFragment"
-        android:title="Saved News"
+        android:title="خبرهای ذخیره شده"
         android:icon="@drawable/ic_add"/>
 
 
