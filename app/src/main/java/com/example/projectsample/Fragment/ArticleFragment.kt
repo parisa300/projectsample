@@ -20,6 +20,7 @@ import com.example.projectsample.ui.NewsViewModel
 import kotlinx.android.synthetic.main.fragment_article.*
 
  class ArticleFragment :Fragment(R.layout.fragment_article) {
+
     lateinit var viewModel: NewsViewModel
 
     val args : ArticleFragmentArgs by navArgs()

@@ -20,12 +20,14 @@ import com.example.projectsample.Adapter.NewsAdapter
 import com.example.projectsample.R
 import com.example.projectsample.Utils.Constants.Companion.QUERY_PAGE_SIZE
 import com.example.projectsample.Utils.Resource
+import com.example.projectsample.databinding.ActivityNewsBinding
 import com.example.projectsample.ui.NewsActivity
 import com.example.projectsample.ui.NewsViewModel
 import kotlinx.android.synthetic.main.fragment_breaking_news.*
 import retrofit2.Response
 
  class BreakingNewsFragment :Fragment(R.layout.fragment_breaking_news) {
+    // private lateinit var binding: ActivityNewsBinding
     lateinit var viewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
     val TAG ="BreakingNewsFragment"
@@ -33,6 +35,7 @@ import retrofit2.Response
 
      override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         viewModel = (activity as NewsActivity).viewModel
         setupRecyclerView()
 
@@ -56,7 +59,7 @@ import retrofit2.Response
                         isLastPage=viewModel.breakingNewsPage ==totalPages
 
                        if(isLastPage){
-                           rvBreakingNews.setPadding(0,0,0,0)
+                        rvBreakingNews.setPadding(0,0,0,0)
                        }
 
 
