@@ -1,10 +1,9 @@
-package com.example.projectsample.Api
+package com.example.projectsample.api
 
 import com.example.projectsample.Utils.Constants.Companion.BASE_URL
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitInstance {

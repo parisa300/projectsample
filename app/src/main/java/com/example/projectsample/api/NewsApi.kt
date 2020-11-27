@@ -1,4 +1,4 @@
-package com.example.projectsample.Api
+package com.example.projectsample.api
 
 import com.example.projectsample.model.NewsResponce
 import com.example.projectsample.Utils.Constants.Companion.API_KEY

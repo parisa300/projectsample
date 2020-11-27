@@ -1,33 +1,27 @@
-package com.example.projectsample.Fragment
+package com.example.projectsample.fragment
 
-import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.AbsListView
-import androidx.activity.result.ActivityResultCallback
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.ActivityResultRegistry
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-import com.example.projectsample.Adapter.NewsAdapter
+import com.example.projectsample.adapter.NewsAdapter
 
 import com.example.projectsample.R
 import com.example.projectsample.Utils.Constants.Companion.QUERY_PAGE_SIZE
 import com.example.projectsample.Utils.Resource
-import com.example.projectsample.databinding.ActivityNewsBinding
+import com.example.projectsample.databinding.FragmentBreakingNewsBinding
 import com.example.projectsample.ui.NewsActivity
 import com.example.projectsample.ui.NewsViewModel
 import kotlinx.android.synthetic.main.fragment_breaking_news.*
-import retrofit2.Response
 
- class BreakingNewsFragment :Fragment(R.layout.fragment_breaking_news) {
-    // private lateinit var binding: ActivityNewsBinding
+class BreakingNewsFragment :Fragment(R.layout.fragment_breaking_news) {
+    private lateinit var binding: FragmentBreakingNewsBinding
     lateinit var viewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
     val TAG ="BreakingNewsFragment"
@@ -35,7 +29,7 @@ import retrofit2.Response
 
      override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+binding = FragmentBreakingNewsBinding.bind(view)
         viewModel = (activity as NewsActivity).viewModel
         setupRecyclerView()
 
@@ -59,7 +53,7 @@ import retrofit2.Response
                         isLastPage=viewModel.breakingNewsPage ==totalPages
 
                        if(isLastPage){
-                        rvBreakingNews.setPadding(0,0,0,0)
+                       binding.rvBreakingNews.setPadding(0,0,0,0)
                        }
 
 
@@ -83,12 +77,12 @@ import retrofit2.Response
 
 
     private fun hideProgressBar(){
-        paginationProgressBar.visibility=View.INVISIBLE
+     binding.paginationProgressBar.visibility=View.INVISIBLE
         isLoading =false
     }
 
     private fun showProgressBar(){
-        paginationProgressBar.visibility=View.VISIBLE
+       binding.paginationProgressBar.visibility=View.VISIBLE
         isLoading =true
     }
 
@@ -127,7 +121,7 @@ import retrofit2.Response
     }
     private fun setupRecyclerView(){
         newsAdapter= NewsAdapter()
-        rvBreakingNews.apply {
+      binding. rvBreakingNews.apply {
             adapter=newsAdapter
             layoutManager=LinearLayoutManager(activity)
             addOnScrollListener(this@BreakingNewsFragment.scrollListener)

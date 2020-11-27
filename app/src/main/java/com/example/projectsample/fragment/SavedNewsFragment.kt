@@ -1,11 +1,7 @@
-package com.example.projectsample.Fragment
+package com.example.projectsample.fragment
 
 import android.os.Bundle
 import android.view.View
-import androidx.activity.result.ActivityResultCallback
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.ActivityResultRegistry
-import androidx.activity.result.contract.ActivityResultContract
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -16,9 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 import com.google.android.material.snackbar.Snackbar
-import com.example.projectsample.Adapter.NewsAdapter
+import com.example.projectsample.adapter.NewsAdapter
 
 import com.example.projectsample.R
+import com.example.projectsample.databinding.FragmentSavedNewsBinding
 import com.example.projectsample.ui.NewsActivity
 import com.example.projectsample.ui.NewsViewModel
 import kotlinx.android.synthetic.main.fragment_saved_news.*
@@ -27,11 +24,12 @@ import kotlinx.android.synthetic.main.fragment_saved_news.*
  class SavedNewsFragment :Fragment(R.layout.fragment_saved_news) {
     lateinit var viewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
-
+   private lateinit var binding: FragmentSavedNewsBinding
 
 
      override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+         binding= FragmentSavedNewsBinding.bind(view)
         viewModel = (activity as NewsActivity).viewModel
        setupRecyclerView()
         newsAdapter.setOnItemClickListener {
@@ -82,7 +80,7 @@ import kotlinx.android.synthetic.main.fragment_saved_news.*
 
     private fun setupRecyclerView(){
         newsAdapter= NewsAdapter()
-        rvSavedNews.apply {
+     binding.rvSavedNews.apply {
             adapter=newsAdapter
             layoutManager= LinearLayoutManager(activity)
         }

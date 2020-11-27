@@ -1,14 +1,16 @@
-package com.example.projectsample.Adapter
+package com.example.projectsample.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.NonNull
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
 import com.bumptech.glide.Glide
 import com.example.projectsample.R
+import com.example.projectsample.databinding.ItemArticlePreviewBinding
 import com.example.projectsample.model.Article
 import kotlinx.android.synthetic.main.item_article_preview.view.*
 
@@ -29,7 +31,10 @@ class NewsAdapter :RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
 
     val differ=AsyncListDiffer(this,differCallback)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
-       return ArticleViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_article_preview,parent,false))
+      return  ArticleViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_article_preview,parent,false))
+
+       /* val itemBinding = ItemArticlePreviewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return */
     }
 
     override fun getItemCount(): Int {
@@ -50,6 +55,7 @@ class NewsAdapter :RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
                 onItemClickListener?.let { it(article) }
             }
         }
+
     }
 
   private var onItemClickListener : ((Article)->Unit)? = null

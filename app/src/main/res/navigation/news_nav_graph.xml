@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/breakingNewsFragment"
-        android:name="com.example.projectsample.Fragment.BreakingNewsFragment"
+        android:name="com.example.projectsample.fragment.BreakingNewsFragment"
         android:label="BreakingNewsFragment">
         <action
             android:id="@+id/action_breakingNewsFragment_to_articleFragment"
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/savedNewsFragment"
-        android:name="com.example.projectsample.Fragment.SavedNewsFragment"
+        android:name="com.example.projectsample.fragment.SavedNewsFragment"
         android:label="SavedNewsFragment">
         <action
             android:id="@+id/action_savedNewsFragment_to_articleFragment"
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/articleFragment"
-        android:name="com.example.projectsample.Fragment.ArticleFragment"
+        android:name="com.example.projectsample.fragment.ArticleFragment"
         android:label="ArticleFragment">
         <argument
             android:name="article"

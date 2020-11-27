@@ -1,6 +1,6 @@
 package com.example.projectsample.repository
 
-import com.example.projectsample.Api.RetrofitInstance
+import com.example.projectsample.api.RetrofitInstance
 import com.example.projectsample.db.ArticleDatabase
 import com.example.projectsample.model.Article
 
